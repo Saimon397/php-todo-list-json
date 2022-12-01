@@ -67,6 +67,10 @@ li {
     transform: scale(1.1);
 }
 
+.todo {
+    color: rgb(3, 167, 3);
+}
+
 .todo.done {
     color: red;
     text-decoration: line-through;
