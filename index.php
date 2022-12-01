@@ -28,8 +28,9 @@
             <hr>
             <h2 class="pb-3 fw-bold">La tua lista:</h2>
             <ul id="todo-list">
-                <li v-for="(todo, index) in todoList" class="todo" :class="todo.done ? 'done' : ''">{{todo.text}}
-                    <span>
+                <li v-for="(todo, index) in todoList" class="todo" :class="todo.done ? 'done' : ''" @click="todoDone(index)">
+                    {{todo.text}}
+                    <span @click.stop=" deleteTodo(index)">
                         <i class="fa-solid fa-trash float-end"></i>
                     </span>
                 </li>

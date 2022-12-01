@@ -30,6 +30,34 @@ const app = createApp({
                 this.getTodo();
             });
         },
+
+        todoDone(i) {
+            const data = {
+                index: i
+            };
+            axios.post(
+                'server.php',
+                data,
+                { headers: { 'Content-Type': 'multipart/form-data' } }
+            ).then((response) => {
+                // console.log(response.data);
+                this.getTodo();
+            });
+        },
+
+        deleteTodo(i) {
+            const data = {
+                indexDelete: i
+            };
+            axios.post(
+                'server.php',
+                data,
+                { headers: { 'Content-Type': 'multipart/form-data' } }
+            ).then((response) => {
+                // console.log(response.data);
+                this.getTodo();
+            });
+        }
     },
 
     mounted() {
